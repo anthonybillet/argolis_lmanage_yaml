@@ -1,0 +1,305 @@
+# FOLDER_PERMISSIONS
+# Opening Session Welcome to the Capturator, this is the Folder place
+# -----------------------------------------------------
+
+- !LookerFolder
+  parent_id:
+  id: '1'
+  name: Shared
+  subfolder:
+  - !LookerFolder
+    parent_id: '1'
+    id: '22'
+    name: Testing with Looks
+    subfolder: []
+    content_metadata_id: '100'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '20'
+    name: BQ Access Controls Demo
+    subfolder: []
+    content_metadata_id: '97'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '14'
+    name: 'Data Security: Shared Folder For All'
+    subfolder:
+    - !LookerFolder
+      parent_id: '14'
+      id: '24'
+      name: Volcom
+      subfolder: []
+      content_metadata_id: '106'
+      team_edit:
+      - Volcom Users
+      team_view: []
+    - !LookerFolder
+      parent_id: '14'
+      id: '23'
+      name: Carhartt
+      subfolder: []
+      content_metadata_id: '105'
+      team_edit:
+      - Carhartt Customers
+      team_view: []
+    content_metadata_id: '75'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '13'
+    name: Community Solves
+    subfolder: []
+    content_metadata_id: '70'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '11'
+    name: Gaming
+    subfolder: []
+    content_metadata_id: '56'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '9'
+    name: Messing Around
+    subfolder:
+    - !LookerFolder
+      parent_id: '9'
+      id: '17'
+      name: Dynamic Customer Fields with Shared Base Model
+      subfolder: []
+      content_metadata_id: '93'
+      team_edit: []
+      team_view: []
+    content_metadata_id: '33'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '8'
+    name: Looker Sample Project
+    subfolder: []
+    content_metadata_id: '22'
+    team_edit: []
+    team_view: []
+  - !LookerFolder
+    parent_id: '1'
+    id: '6'
+    name: Looker Ecommerce Demo
+    subfolder: []
+    content_metadata_id: '20'
+    team_edit: []
+    team_view: []
+  content_metadata_id: '1'
+  team_edit: []
+  team_view:
+  - All Users
+# Looker Role
+# Opening Session Welcome to the Capturator, this is the Role place
+# -----------------------------------------------------
+
+
+
+# PERMISSION SETS
+- !LookerPermissionSet
+  permissions:
+  - access_data
+  - can_create_forecast
+  - clear_cache_refresh
+  - create_custom_fields
+  - create_table_calculations
+  - download_without_limit
+  - explore
+  - manage_spaces
+  - save_content
+  - save_dashboards
+  - save_looks
+  - schedule_look_emails
+  - see_drill_overlay
+  - see_lookml
+  - see_lookml_dashboards
+  - see_looks
+  - see_sql
+  - see_user_dashboards
+  - send_to_integration
+  name: User
+- !LookerPermissionSet
+  permissions:
+  - access_data
+  - can_create_forecast
+  - clear_cache_refresh
+  - create_custom_fields
+  - create_table_calculations
+  - deploy
+  - develop
+  - download_without_limit
+  - explore
+  - manage_spaces
+  - save_content
+  - save_dashboards
+  - save_looks
+  - schedule_look_emails
+  - see_drill_overlay
+  - see_lookml
+  - see_lookml_dashboards
+  - see_looks
+  - see_pdts
+  - see_sql
+  - see_user_dashboards
+  - send_to_integration
+  - use_sql_runner
+  name: Developer
+- !LookerPermissionSet
+  permissions:
+  - access_data
+  - clear_cache_refresh
+  - schedule_look_emails
+  - see_drill_overlay
+  - see_lookml_dashboards
+  - see_looks
+  - see_user_dashboards
+  - send_to_integration
+  name: Viewer download limit
+- !LookerPermissionSet
+  permissions:
+  - access_data
+  - clear_cache_refresh
+  - download_without_limit
+  - schedule_look_emails
+  - see_drill_overlay
+  - see_lookml_dashboards
+  - see_looks
+  - see_user_dashboards
+  - send_to_integration
+  name: Viewer
+
+
+# MODEL SETS
+- !LookerModelSet
+  models:
+  - project_model_permissions
+  name: project_model_pemission
+- !LookerModelSet
+  models:
+  - spoke_model
+  - ecommerce_build
+  - gaming_agg_aware
+  - data_security_demo
+  - jira_double_join
+  - block_google_ads_transfer_new_v2
+  - thelook
+  - base_model
+  - z_explore_assistant
+  - ga4
+  - extension-api-explorer
+  - bq_access_controls
+  - gaming
+  - basic_ecomm
+  - intermediate_ecomm
+  - advanced_ecomm
+  - alert_test
+  - inventory_by_day
+  - sample_nested_ga4_data
+  - project_model_permissions
+  name: All
+
+
+# LOOKER ROLES
+- !LookerRoles
+  permission_set: User
+  model_set: All
+  teams:
+  - User
+  name: User
+- !LookerRoles
+  permission_set: Developer
+  model_set: All
+  teams: []
+  name: Developer
+- !LookerRoles
+  permission_set: Viewer
+  model_set: All
+  teams: []
+  name: Viewer
+- !LookerRoles
+  permission_set: Viewer download limit
+  model_set: All
+  teams: []
+  name: Viewer download limit
+- !LookerRoles
+  permission_set: Developer
+  model_set: project_model_pemission
+  teams: []
+  name: Developer on project_model_permission
+
+
+# USER_ATTRIBUTES
+- !LookerUserAttribute
+  name: can_see_sensitive_data
+  uatype: string
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'False'
+  default_value: Yes
+  teams:
+  - Users who can see sensitive data: Yes
+  - Users who can't See Sensitive Data: No
+- !LookerUserAttribute
+  name: customer_id
+  uatype: advanced_filter_string
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'False'
+  default_value: '%, NULL'
+  teams:
+  - Carhartt Customers: Carhartt
+  - Volcom Users: Volcom
+- !LookerUserAttribute
+  name: landing_page
+  uatype: relative_url
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'True'
+  default_value: /browse
+  teams: []
+- !LookerUserAttribute
+  name: locale
+  uatype: string
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'True'
+  default_value: ''
+  teams: []
+- !LookerUserAttribute
+  name: looker_internal_email_domain_allowlist
+  uatype: string
+  hidden_value: false
+  user_view: 'False'
+  user_edit: 'False'
+  default_value: ''
+  teams: []
+- !LookerUserAttribute
+  name: number_format
+  uatype: string
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'False'
+  default_value: ''
+  teams: []
+- !LookerUserAttribute
+  name: schema_name
+  uatype: string
+  hidden_value: false
+  user_view: 'True'
+  user_edit: 'False'
+  default_value: Customer_A
+  teams:
+  - Customer A: Customer_A
+  - Customer B: Customer_B
