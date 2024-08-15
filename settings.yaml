@@ -17,14 +17,6 @@
     team_view: []
   - !LookerFolder
     parent_id: '1'
-    id: '20'
-    name: BQ Access Controls Demo
-    subfolder: []
-    content_metadata_id: '97'
-    team_edit: []
-    team_view: []
-  - !LookerFolder
-    parent_id: '1'
     id: '14'
     name: 'Data Security: Shared Folder For All'
     subfolder:
@@ -59,25 +51,9 @@
     team_view: []
   - !LookerFolder
     parent_id: '1'
-    id: '11'
-    name: Gaming
-    subfolder: []
-    content_metadata_id: '56'
-    team_edit: []
-    team_view: []
-  - !LookerFolder
-    parent_id: '1'
     id: '9'
     name: Messing Around
-    subfolder:
-    - !LookerFolder
-      parent_id: '9'
-      id: '17'
-      name: Dynamic Customer Fields with Shared Base Model
-      subfolder: []
-      content_metadata_id: '93'
-      team_edit: []
-      team_view: []
+    subfolder: []
     content_metadata_id: '33'
     team_edit: []
     team_view: []
@@ -111,25 +87,26 @@
 - !LookerPermissionSet
   permissions:
   - access_data
-  - can_create_forecast
   - clear_cache_refresh
-  - create_custom_fields
-  - create_table_calculations
   - download_without_limit
-  - explore
-  - manage_spaces
-  - save_content
-  - save_dashboards
-  - save_looks
   - schedule_look_emails
   - see_drill_overlay
-  - see_lookml
   - see_lookml_dashboards
   - see_looks
-  - see_sql
   - see_user_dashboards
   - send_to_integration
-  name: User
+  name: Viewer
+- !LookerPermissionSet
+  permissions:
+  - access_data
+  - clear_cache_refresh
+  - schedule_look_emails
+  - see_drill_overlay
+  - see_lookml_dashboards
+  - see_looks
+  - see_user_dashboards
+  - send_to_integration
+  name: Viewer download limit
 - !LookerPermissionSet
   permissions:
   - access_data
@@ -159,26 +136,25 @@
 - !LookerPermissionSet
   permissions:
   - access_data
+  - can_create_forecast
   - clear_cache_refresh
-  - schedule_look_emails
-  - see_drill_overlay
-  - see_lookml_dashboards
-  - see_looks
-  - see_user_dashboards
-  - send_to_integration
-  name: Viewer download limit
-- !LookerPermissionSet
-  permissions:
-  - access_data
-  - clear_cache_refresh
+  - create_custom_fields
+  - create_table_calculations
   - download_without_limit
+  - explore
+  - manage_spaces
+  - save_content
+  - save_dashboards
+  - save_looks
   - schedule_look_emails
   - see_drill_overlay
+  - see_lookml
   - see_lookml_dashboards
   - see_looks
+  - see_sql
   - see_user_dashboards
   - send_to_integration
-  name: Viewer
+  name: User
 
 
 # MODEL SETS
@@ -199,7 +175,6 @@
   - z_explore_assistant
   - ga4
   - extension-api-explorer
-  - bq_access_controls
   - gaming
   - basic_ecomm
   - intermediate_ecomm
